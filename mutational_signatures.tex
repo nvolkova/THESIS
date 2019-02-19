@@ -1,0 +1,117 @@
+
+\begin{document}
+\pagestyle{empty}
+\subsection{Mutational signatures}
+
+
+
+
+
+\subsubsection{Somatic mutations in cancer}
+
+\subsubsection*{Mutagen exposure, DNA repair deficiencies and cancer risk}
+
+\subsubsection*{Driver and passenger mutations}
+
+
+
+
+
+
+
+
+\subsubsection{Concept of mutational signatures}
+
+\subsubsection*{Individual factor analysis in human cancer }
+
+Investigation of mutational rates by the means of model organisms has been widely conducted in the last years (\cite{Segovia}), however not many of these works included DNA repair genes analysis. The first big study on that premise was performed two years ago (\cite{Meier1}, \cite{Meier2}), and the first project is mostly the continuation of the this research.
+
+Signatures inferred from model organisms are essential for the understanding of mutagenesis mechanisms. Apart from the significance for basic research, it would be of great importance to  translate these effects into human data as it would allow to study the causes of the diseases caused by acquired changes in DNA, and first of all of cancer.
+
+The main difficulty consists in constructing an adequate transformation of the signatures obtained using worm data in order to apply them to other organism. We are planning to normalize the signatures as much as possible using functional and chemical features available for \textit{C. elegans} and further validate them by the use of yeast and human iPS cell lines data from COMSIG.
+
+Using these translated signatures, we plan to perform single mutagenic factor based analysis of the primary cancer samples from TCGA. There are two strategies we are going to apply in order to establish the links between mutational factor signatures and tumor DNA alteration spectra:
+
+\begin{itemize}
+\item Investigate the samples with known exposures and DNA repair deficiencies in order to estimate individual contributions of different factors into the overall mutational landscape of each cancer sample. 
+\item Try to identify the patterns caused by individual factors in primary cancer samples and link them back to the cancer types the samples are coming from.
+\end{itemize}
+
+After proving applicability of the individual factor signatures to human data, we will be able to start a deeper investigation of mutational signatures in cancers and their underlying mechanisms.
+
+
+\subsubsection*{Cancer genome decomposition}
+
+According to the current state of the Catalogue Of Somatic Mutations In Cancer (COSMIC) project (\cite{COSMIC}), there are 30 base substitution signatures identified so far (several indel and genomic rearrangement signatures identified recently (e.g. \cite{Alex5}, \cite{NZ2}) are not included in the catalogue yet). It is important to notice that these signatures may be not unique: they were extracted from a large dataset of cancer genomes as one possible basis of the latent variable space, and their linear combination may represent more meaningful signatures (e.g., as was proven for signatures 1A, 1B and 5 in \cite{Alex3}), expecially as soon as more data is added to the pool, increasing the statistical power of blind source separation methods such as NMF (\cite{Alex2}).
+
+Based on large cohort studies, several significant associations were identified for 17 base substitution signatures with both genetic and environmental factors (\cite{Alex1},\cite{Alex2},\cite{Roberts}):
+
+\begin{itemize}
+\itemsep0em
+\item Genetic factors:
+  \begin{itemize}
+  \itemsep0em
+  \item Signatures 1 and 5 are strongly correlated with age and may therefore represent aging related mutational processes (\cite{Alex4});
+  \item Signatures 2 and 13 were associated with the activity of APOBEC family related pathways;
+  \item Signature 3 - with defective homologous recombination;
+  \item Signatures 6, 15, 20 and 26 - with DNA mismatch repair deficiency (\cite{MMR});
+  \item Signatures 9 and 10 are associated with polymerases failures;
+  \end{itemize}
+\item Mutagen exposures:
+  \begin{itemize}
+  \itemsep0em
+  \item Signature 24 has a proposed link to aflatoxin exposure;
+  \item Signatures 4 and 29 have been attributed to tobacco mutagenesis;
+  \item Signature 7 is potentially associated with UV;
+  \item Signature 11 - with the action of an alkylating agent temozolomide (\cite{Poon1});
+  \item Signature 22 was only found in the samples with aristolochic acid exposure (\cite{Poon2});
+  \end{itemize}
+\end{itemize}
+
+In order to further explain the mutational background of cancer, we propose to perform the following steps:
+
+\begin{enumerate}
+\item Assess cancer signature purity by direct comparison of individual factor signatures with the respective cancer-type dependent signature combinations.
+\item Search for the further associations between the signatures and individual genetic and mutagenic components from the catalogue, measure the contribution of interaction factors.
+\item Potentially recombine the signatures into new linear combinations which would be explicitly linked to a particular mechanism.
+\item Decompose the mutational spectra in different cancers based on individual factors identified in the first stage of this project, i.e. perform the NMF of a big cancer dataset using the effects catalogue as a basis, and compare the obtained contribution patterns to known causal relationships.
+\end{enumerate}
+
+Additionally, the information about interaction signatures will allow to recover the exposure history behind the mutational processes happened in the past, and will also help to predict the progress of an ongoing process and the quantitative results of a radio- or chemotoxin exposure of a particular tumor (\cite{Hollstein}).
+
+If we find a robust and stable basis combinations of exposures that will explain the causes and mutagenic contribution in different cancer types, they may serve as a clear and intuitive mean of cancer genome analysis. Prospectively we could also create a tool that would decompose an individual somatic mutational spectrum of a patient into corresponding signatures contributions and also identify the effects of particular factors.
+
+Such representation may also allow to investigate the situations when the phenotype of a sample reports a genetic background which is not actually present (as samples with and without BRCA-1 mutations in breast cancers, \cite{NZ2}) by finding alternative combinations of factors leading to a similar observed pattern.
+
+The investigation of these aspects is planned in 2018, followed by validation in additional primary samples datasets (TCGA, CGP, ICGC and other cancer data resources \cite{Tian}) and finalized with a wrap-up and thesis completion by April 2019.
+
+
+
+
+
+
+\subsubsection{Methods for signature extraction}
+
+\subsubsection*{Factor analysis}
+
+\subsubsection*{Non-negative matrix factorisation}
+
+\subsubsection*{Bayesian approaches and Dirichlet processes}
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Clinical applications of mutational signatures}
+
+
+
+
+\end{document}
