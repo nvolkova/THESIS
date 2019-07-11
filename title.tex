@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,oneside]{article}
+\documentclass[12pt,a4paper,twoside]{book}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
@@ -12,6 +12,12 @@
 \usepackage{amsmath}
 \usepackage{setspace}
 \usepackage{standalone}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc} 
+\usepackage{csquotes}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[style=authoryear, backend=bibtex]{biblatex}
+
 
 \setlength{\voffset}{-28.4mm}
 \setlength{\hoffset}{-1in}
@@ -19,75 +25,102 @@
 \setlength{\oddsidemargin}{25mm}
 \setlength{\evensidemargin}{25mm}
 \setlength{\textwidth}{160mm}
-
-\setlength{\parindent}{0pt}
+\setlength{\parskip}{0em}
+\onehalfspacing
 
 \setlength{\textheight}{235mm}
 \setlength{\footskip}{20mm}
 \setlength{\headsep}{50pt}
 \setlength{\headheight}{0pt}
 
+\addbibresource{refs.bib}
+
+\frontmatter
+
 \begin{document}
 \pagestyle{empty}
 %%%% Title page
 \begin{titlepage}
 \begin{center}
-\includegraphics[scale=0.4]{ebi_logo.png} \thinspace \thinspace \thinspace
-\includegraphics[scale=0.6]{uni_cam_logo.jpg}\\[5mm]
-\vspace*{20mm}
-\sf
-\normalsize
 
 \bigskip
 {\Huge
 
   \textbf{Reconstructing mutational patterns in model organisms and primary cancer samples}
 }
+
+\todo[inline]{Measuring the mutagenic contirbutions of DNA repair and DNA damage}
+
+\vspace*{10mm}
+
+\includegraphics[scale=2]{University_Crest.eps}
+
 \bigskip
 
-\vspace*{30mm}
+\vspace*{20mm}
 
 \normalsize
 {\Large
-Nadezda Volkova
+\textbf{Nadezda Volkova}
 }
+\vspace*{30mm}
+
+European Bioinformatics Institute
+
+University of Cambridge
+
+\vspace*{30mm}
+
+This dissertation is submitted for the degree of 
+
+\textit{Doctor of Philosophy}
+
 \end{center}
+
+\vspace*{20mm}
+
+Lucy Cavendish College
+
+September 2019
 
 \end{titlepage}
 
+\null\newpage
+
+\input{title_related/declaration.tex}
+
+\input{title_related/summary}
+
+\input{title_related/acknowledgements}
+
 \tableofcontents
-\newpage{}
+
+\listoffigures
+
+\mainmatter
 
 \input{introduction.tex}
 
-\newpage{}
+\input{screen.tex}
 
-\input{mutagenesis.tex}
+\input{ce_repair_deficiency.tex}
 
-\newpage{}
+\input{mismatch_repair.tex}
 
-\input{mutational_signatures.tex}
-
-\newpage{}
-
-\input{signatures_in_c_elegans.tex}
-
-\newpage{}
+\input{ce_genotoxin.tex}
 
 \input{interactions.tex}
 
-\newpage{}
-
-\input{implications_for_cancer.tex}
-
-\newpage{}
+\input{cancer.tex}
 
 \input{conclusions.tex}
 
-\newpage{}
-
-\input{bibliography.tex}
+\input{discussion.tex}
 
 \newpage{}
+
+\input{Appendix_filtering.tex}
+
+\printbibliography
 
 \end{document}

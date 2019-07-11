@@ -1,0 +1,135 @@
+
+
+\begin{document}
+\pagestyle{empty}
+\chapter{Interplay between DNA damage and repair in human cancer}
+
+\section{Introduction}
+
+In the previous chapter, I have introduced the idea of mutational signatures being a product 
+of interplay between DNA damage and DNA repair, and described the most striking examples of 
+such interactions observed in the \textit{C. elegans} mutagenesis screen.
+
+Knowing about variability of mutational signatures presents the means for a more informed 
+signature analysis in individual samples. Thus, in this chapter I will explore the frequency 
+of DNA repair impairments across human cancers and the overall contribution of defects in DNA 
+repair related genes to cancer development. I will also present a model for simulatneous 
+extraction of mutational signatures and analyzing the effects of DNA repair deactivation 
+on the appearance of these signatures, which will allow for the analysis of damage-repair 
+interactions in tumours with strong mutagenic components.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Widespread DNA repair defects in human cancer}
+
+In order to leverage the concept of mutational spectra being shaped jointly by mutagen exposure 
+and DNA repair status in human cancer genomes, we analysed the DNA repair defects across 30 cancer 
+types from TCGA (\cite{TCGA}) and studied the appearance of various mutagenic processes in samples 
+labelled as deficient or proficient in 9 DNA repair pathways: mismatch repair (MMR), 
+base excision repair (BER), nucleotide excision repair (NER), homologous recombination repair (HRR), 
+translesion synthesis (TLS), non-homologous end-joning (NHEJ), Fanconi anemia pathway (FA), direct 
+repair (DR) and damage sensing (DS) pathways. In total, we analysed 81 core DNA repair genes 
+across these pathways, and for more in-depth analysis, we looked at additional 97 genes 
+indirectly associated with DNA repair performed via these pathways (Table M).
+\todo[inline]{Include the list of genes in the Appendix!}
+
+\subsection{Monoallelic vs biallelic}
+
+Such analysis requires the identification of cancers where biallelic inactivation of a 
+given DNA repair or DNA damage response gene occurs, either by two independent mutations, 
+or via the combination of mutation and gene silencing (Lahtz and Pfeifer 2011). 
+We thus scanned for loss-of-function mutations in core genes of the 9 consensus 
+DNA repair pathways (Pearl et al. 2015) across 9,946 samples and 30 cancer types 
+available from the TCGA collection.
+
+In line with what was reported previously, we found that monoallelic defects in DNA repair are quite common - on average, around 50\% (??) of samples would have at least one gene of a given repair pathway mutated (Knijnenburg et al., 2018) (Figure N). In contrast, our analysis of biallelic deactivation events showed that these are rare.
+
+A notable exception is the damage sensing pathway, which is biallelicly deactivated in over 11\% of all samples due to mutations in commonly mutated DNA damage response genes such that p53 tumour suppressor gene. is the biallelic inactivation of genes involved in the DNA damage. Amongst other DNA repair genes, most common is the biallelic inactivation of MMR (13\% of adrenocortical carcinomas and 7\% of endometrial cancers), as well as complete inactivation of TLS polymerase REV3L in testicular cancers (TGCT). Genes involved in direct damage reversal are impaired in 6\% of leukemias, and genes involved in homologous recombination repair occur to be inactivated  in  6\% of ovarian cancers.
+
+\subsection{Effect on mutation burden and spectra}
+
+Given the wide spread of mono- and bi-allelic defects in DNA repair genes across all cancer types, we aimed to investigate how much of effect do they have on the mutational burden and mutational signatures present in repsective tumours. In order to do that, we looked at the change in mutation burden per year between wild-type samples, samples with heterozygous mutations, and samples with homozygous mutations (if available) in the core genes in a certain pathway. We observed that an elevation in the number of mutations was not common - only 25 out of 270 combinations of cancer types showed a significant change in the mutational burden as shown by Wilcoxon rank-sum test *REF* (FDR 5\%).
+
+Most of the significant interactions associated with increase in mutation burden are produced by defects in damage sensing pathway and mismatch repair as well as polymerase $\epsilon$ proofreading domain defects *FIGURE N*. However, we do see some associations with nucleotide excision repair and homologous recombination repair pathway.
+
+Being aware that the association between mutations in DNA repair genes and mutation burden could be caused simply by the fact that higher total number of mutations means higher chance of hitting the respective genes with mutations, we performed simulations in order to establish whether it is likely. Based on the distribution of synonymous mutations across the exome of all samples within certain cancer types, we simulated the number of mutations corresponding across core components of 9 DNA repair pathways such that it would produce the same number of synonymous mutations as observed, and tested whether the observed number of non-synonymous mutations in these genes across the set corresponds to expected. Using this approach, we identified that only about 70\% of the associations we considered important could not be caused simply by the increase in mutation burden. Among these, damage sensing pathway, POLE, HRD and MMRD remained significant and showed a genuine increase in mutation burden in response to damaging mutations in respective pathways *FIGURE N stars*.
+
+Furthermore, we also assesed the mutational profiles of samples with and without DNA repair pathway defects. Upon subtraction of mutations caused by endogenous or non-DNA repair associared processes, such that signature SBS1 (associated with spontaneous deamination of 5meC) and APOBEC signatures (SBS2 and SBS13), we calculated the cosine distance between the median mutational spectra of samples without mutations in certain pathway to that in the group with heterzygous mutations and to the group with homozygous mutations (if those groups of samples consisted of at least 4 samples with more than 100 mutations, to ensure the meaningfulness of the analysis of mutation spectra).
+
+This comparison revealed a striking difference in the profiles for proofreading domain mutations of POLE, for MMR mutations in stomach and uterine cancers, as well as for DR mutations in glioblastomas and HR mtuations in breast and ovarian cancers *FIGURE N+2*. These findings are in line with the existence of strong mutational signatures associated with all these processes, apart from DR defects in GBM: a change in mutation spectrum of these samples is actually caused by the presence of strong treatment signature (temozolomide) in the samples defective in direct repair enzyme MGMT as compared to the rest of samples. (FIGURE N+3).
+
+\subsection{Selective pressure across DNA repair genes}
+
+Selection - present!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Damage repair interactions}
+
+Interactions observed in human data
+
+Illustration:
+
+\subsection*{temozolomide}
+
+\subsection*{APOBEC and BER}
+
+\subsection*{POLE-MMR}
+
+\subsection*{NER/FA and cisplatin}
+
+\subsection{Clinically targetable interactions}
+
+Interactions as a source of therapy targets:
+
+temozolomide and MGMT
+
+BRCA and PARP inhibitors
+
+APOBEC and ATR inhibitors
+
+\subsection*{Prospective interactions which are not represented in the data yet}
+
+Signature 17 may be a result of mutagenic activity and interact with NER status
+
+Other environmental agents (asbestos, alcohol?)
+
+\subsection{Relationship between mutation rate and cancer risk}
+
+Explain why such a little effect is observed when we expect so much
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Methods and resources}
+
+\subsection{Data sources and acquisition}
+
+Individual studies, TCGA, ICGC, PCAWG
+
+Filtering and QC
+
+\subsection{Analysing DNA repair efficacy}
+
+Sample labeling: search for signs of defective repair components
+
+\subsection{Methods for extraction of signature alterations}
+
+\subsection*{MCMC for effect extraction}
+
+\subsubsection*{Expanded model for simultaneous exposure, signature and effect extraction}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Discussion}
+
+Taken together, our experimental screen and data analysis showed that mutagenesis is fundamentally driven by the antagonism of DNA damage and repair. A consequence of this interaction is that the resulting mutational patterns can vary in a number of ways. The resulting phenomena range from dosage effects marking a uniform increase of the same mutational pattern for a given dose of mutagen, indicating that the compromised repair gene was involved in the repair of all types of lesions. Conversely, the mutation spectra change if divergent repair pathways are involved in specific subsets of DNA lesions introduced by the same genotoxin. This was observed here for alkylating agents and aristolochic acid, implying that the same biochemical adducts at different bases and residues are repaired by distinct pathways, which may be a consequence of their impact on DNA helix shape and stability. In the case of DNA methylation our data corroborates the notion that the mutagenicity of O6-methylguanine stems from mis-pairing with thymine, and is repaired by methyl guanine methyl transferases, while N3-methyladenine stalls replication, which is resolved by translesion synthesis polymerases.
+
+The notion of DNA damage and repair interactions shaping the mutational landscape is also critical from the perspective of DNA repair deficiency conditions, because the same deficiency will yield a variety of spectra depending on the DNA damage (or replication errors) the genome experiences. For example, mismatch repair deficiency is known to come in a number of facets, which can be attributed to spontaneous 5-methylcytosine deamination, replication slippage, POLE proofreading deficiency and a number of yet undiscovered sources. Lastly, it should also be noted that biochemically different types of DNA damage can yield seemingly identical mutation spectra.
+
+The analysis of mutational signatures has gained much attention in recent years and dramatically deepened our understanding of the range and typical types of mutation patterns observed in human cancer and normal tissues. Looking forward it appears important to recognised the variable nature of mutational spectra due their genesis by the eternal struggle of DNA damage and repair. Moreover, our ability to observe the activity of mutagenic processes and its outcomes is often limited by the overall high efficiency and redundancy of DNA repair processes which only leave a small fraction of damage visible as mutations. Thus catalogues of mutational signatures reported in cancer cells may only ever represent the most striking exemplars of specific mutagenic constellation. These, however can be expected to manifest in a multitude of ways due to the exact constellation and temporal evolution of DNA damage and repair experienced by a cell over its lifetime.
+
+
+Cancer is complicated
+
+\end{document}

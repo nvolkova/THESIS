@@ -1,50 +1,88 @@
-\documentclass[12pt,a4paper,oneside]{article}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{graphicx}
-\usepackage{indentfirst}
-\usepackage{listings}
-\usepackage{hyperref}
-\usepackage{wrapfig}
-\usepackage{caption}
-\usepackage{subcaption}
-\usepackage{float}
-\usepackage{amsmath}
-\usepackage{setspace}
-
-\setlength{\voffset}{-28.4mm}
-\setlength{\hoffset}{-1in}
-\setlength{\topmargin}{20mm}
-\setlength{\oddsidemargin}{25mm}
-\setlength{\evensidemargin}{25mm}
-\setlength{\textwidth}{160mm}
-
-\setlength{\parindent}{0pt}
-
-\setlength{\textheight}{235mm}
-\setlength{\footskip}{20mm}
-\setlength{\headsep}{50pt}
-\setlength{\headheight}{0pt}
 
 \begin{document}
 \pagestyle{empty}
-\section{Introduction}
 
-Genome stability maintenance plays the key role in cell’s ability to propagate. Spontaneous changes and mutagenic damage in the genome may cause wide range of diseases including cancer. These alterations can be an effect of combination of environmental factors damaging DNA and deficiencies in DNA repair and replication leading to characteristic mutational spectra.
+\chapter{Introduction}
 
-Mutational signatures (\cite{Alex1}, \cite{Alex2}, \cite{NZ}) became a very useful tool of cancer investigation in the last years. However, most of the signatures identified so far represent complex conglomerates of the action of different mutational processes, deciphering which will be essential for understanding the causes of the disease and the most efficient treatment options. For some of the signatures, significant associations with various mutational processes were identified, although the precise causation is still unclear (\cite{Alex1}, \cite{Alex3}, \cite{Helleday}). For others, no links with the underlying mutational processes were found so far. 
+Genome stability maintenance plays the key role in cell’s ability to propagate. Spontaneous 
+changes and mutagenic damage in the genome may cause wide range of diseases including cancer. 
+These alterations can be an effect of combination of environmental factors damaging DNA and 
+deficiencies in DNA repair and replication leading to characteristic mutational spectra.
 
-DNA repair mechanisms represent the key component of genome stability maintenance. Repair ability deficiencies provide space for major alterations of the genome, both by the aggregation of spontaneous mutations and the lack of mutagen resistance. There are several major classes of DNA repair pathways: direct reversal, single-strand damage repair (such as base excision repair, nucleotide excision repair and mismatch repair systems), double-strand break repair (which includes homologous recombination, microhomology-mediated end joining and non-homologous end-joining), translesion synthesis, and also DNA damage signaling pathways and associated cell cycle control mechanisms (\cite{DNArepair}). Dissecting the individual contribution of each of them represents a highly complex task, since many DNA repair components have functions associated with different repair pathways, and in some cases these mechanisms may be interchangeable. Nevertheless it is possible to investigate the contributions of the most essential genetic components and their interplay with each other and with various cytotoxins to imitate the processes happening in cancer (\cite{Helleday}, \cite{Wu}).
+Various mutational process attack the genome due to endogenous or exogenous factors, and 
+many of them are believed to leave a unique pattern of mutations in the genome. Given the 
+explosion in the amount of publicly available cancer sequencing data, it was tempting to 
+aggregate it together and apply machine learning methods to extract the signatures of 
+underlying mutagenic processes. Hence, mutational signatures (\cite{Alexandrov2013-md}, 
+\cite{Alexandrov2015-clock}, \cite{Nik-Zainal2012-eg}) became a very useful tool of cancer 
+investigation in the last years. However, most of the signatures identified so far represent 
+complex conglomerates of the action of different mutational processes, deciphering which will 
+be essential for understanding the causes of the disease and the most efficient treatment 
+options. For some of the signatures, significant associations with various mutational 
+processes were identified, although the precise causation is still unclear (\cite{Alexandrov2013-md},
+\cite{Alexandrov2015-clock}, \cite{Helleday2014-kw}). For others, no links with the underlying 
+mutational processes were found so far. 
 
-The central conceptual parameter of cancer development are the driver genes that cause the most important events in individual cancer evolution (\cite{Stratton}). The set of driver mutations is usually small, but most of them happen in the genes essential for cell growth or damage-caused apoptosis (such as tumor suppressor gene P53 \cite{p53} or oncogene KRAS \cite{KRAS}) and lead to bursts of mutations directed by the effectiveness of particular DNA repair mechanisms. Knowing the individual and interaction effects of key elements of genome stability maintenance and environmental exposures will provide means to trace back the causes of the disease and predict the outcomes of chemo- or radiotherapy in every individual case (\cite{Poon2}).
+The mutational profiles observed in sequencing studies represent the result of interaction 
+between damaging and repairing factors, and the ability to disentangle the interactions 
+between them which are shaping mutational history of a tumor gives more insight into the 
+origins of a particular tumor and may suggest prospective targets for treatment 
+(\cite{Alexandrov2013-zu}, \cite{Alexandrov2015-gastric}, \cite{Hollstein2017-ag}, \cite{Poon2014-review}). 
+Dissecting the individual contributions of each of DNA repair deficiencies and external 
+exposures represents a highly complex task due to  redundancy in DNA repair pathways, 
+interaction effects, sequencing artifacts, and high inter- and intra-personal variance 
+among patients. Hence the investigation of mutational patterns in a controlled environment 
+of a model organism can give a better understanding of underlying biology and shed light 
+on the precise contribution of the factors involved (\cite{Meier2014-aa}, \cite{Segovia2015-cr}).
 
-Maintaining genome stability is essential for cell integrity. Alterations in the genome resulting from endogenous sources such as spontaneous conversions and replication errors or external agent exposure cause abnormalities in cell behavior, leading to a wide range of diseases including cancer.
+DNA repair mechanisms represent the key component of genome stability maintenance. 
+Repair ability deficiencies provide space for major alterations of the genome, both 
+by the aggregation of spontaneous mutations and the lack of mutagen resistance. 
+There are several major classes of DNA repair pathways: direct reversal, single-strand 
+damage repair (such as base excision repair, nucleotide excision repair and mismatch 
+repair systems), double-strand break repair (which includes homologous recombination, 
+microhomology-mediated end joining and non-homologous end-joining), translesion synthesis, 
+and also DNA damage signaling pathways and associated cell cycle control mechanisms 
+(\cite{Alberts2007-qn}). Dissecting the individual contribution of each of them represents 
+a highly complex task, since many DNA repair components have functions associated with 
+different repair pathways, and in some cases these mechanisms may be interchangeable. 
+Nevertheless it is possible to investigate the contributions of the most essential 
+genetic components and their interplay with each other and with various cytotoxins 
+to imitate the processes happening in cancer (\cite{Helleday2014-kw}, \cite{Wu2016-qp}).
 
-The mutational profiles observed in sequencing studies (\cite{Alex1}) represent the result of interaction between damaging and repairing factors, and the ability to disentangle the interactions between them which are shaping mutational history of a tumor gives more insight into the origins of a particular tumor and may suggest prospective targets for treatment (\cite{Alex1}, \cite{Alex5}, \cite{Hollstein}, \cite{Poon1}). Dissecting the individual contributions of each of DNA repair deficiencies and external exposures represents a highly complex task due to  redundancy in DNA repair pathways, interaction effects, sequencing artifacts, and high inter- and intra-personal variance among patients. Hence the investigation of mutational patterns in a controlled environment of a model organism can give a better understanding of underlying biology and shed light on the precise contribution of the factors involved (\cite{Meier1}, \cite{Segovia}).
+The central conceptual parameter of cancer development are the driver genes that 
+cause the most important events in individual cancer evolution (\cite{Stratton2009-kh}). 
+The set of driver mutations is usually small, but most of them happen in the genes 
+essential for cell growth or damage-caused apoptosis (such as tumor suppressor gene 
+P53 (\cite{Rivlin2011-cz}) or oncogene KRAS (\cite{Wang2015-ki}) and lead to bursts of mutations directed 
+by the effectiveness of particular DNA repair mechanisms. Knowing the individual and 
+interaction effects of key elements of genome stability maintenance and environmental 
+exposures will provide means to trace back the causes of the disease and predict the 
+outcomes of chemo- or radiotherapy in every individual case (\cite{Poon2014-review}).
 
-In the first and second year of my PhD, I was working on the mutational signature extraction for a model organism (\textit{C. elegans}) and application of the patterns observed in controlled experiments to human cancer data. We have compared the base substitution and indel signatures of mismatch repair deficiency in \textit{C. elegans} and human gastric and colorectal cancers, and were able to conclude that \textit{C. elegans} analysis allows to identify interaction effects and redundancies in the human signature set (the manuscript has been reviewed and is undergoing corrections for re-submission). We have also successfully matched a number of cytotoxin exposure signatures along with observing interesting interaction effects worth further investigation. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this report, I describe the results of \textit{C. elegans} dataset analysis and the proposed strategies for application of model organism derived signatures to human cancer signature investigation. Current project is being carried on in collaboration with Anton Gartner group at the University of Dundee and WTSI Cancer Genome Project group, and supported by the Consortium for Mutational Signatures (COMSIG).
+\input{intro-mutagenesis}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{intro-mutational_signatures}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Aims and concepts of this thesis}
+
+In this thesis, I will describe the experimental mutational signatures of various mutagenic 
+agents and DNA repair deficiencies in \textit{C. elegans}, discuss the interplay between 
+DNA damage and repair which may result in a dramatic change of mutational patterns in the 
+genome, compare experimental results to human cancers and propose strategies for application 
+of model organism-derived signatures to cancer signature investigation. The aim of 
+this first chapter is to present an overview of processes involved in DNA damage acquisition 
+and processing, give a summary of the methods previously developed for analysis of mutational 
+signatures in cancer genomes, and describe the current state of DNA repair biology and cancer 
+genomics fields and their understanding of mutational signatures.
+
+%%This work was carried on in collaboration with Anton Gartner group at the University of Dundee and WTSI Cancer Genome Project group, and supported by the Consortium for Mutational Signatures (COMSIG).
 
 \end{document}
 
